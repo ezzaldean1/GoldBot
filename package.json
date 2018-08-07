@@ -1,5 +1,5 @@
 {
-  "name": "bytetech",
+  "name": "bot.js",
   "version": "2.1.0",
   "description": "-- AWESOMENESS --",
   "main": "bot.js",
@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "ascii-data-table": "^2.1.1",
-     "array-sort": "^1.0.0",
     "canvas": "^1.6.10",
     "dateformat": "^3.0.3",
     "discord.js": "^11.3.2",
@@ -32,11 +31,8 @@
     "sqlite3": "^4.0.0",
     "youtube-info": "^1.2.0",
     "ytdl-core": "^0.20.3"
-       
   },
   "engines": {
     "node": "8.4.0"
   }
 }
-
-
