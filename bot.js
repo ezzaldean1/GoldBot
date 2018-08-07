@@ -17,7 +17,6 @@ const moment = require('moment');
 const ms = require("ms");
 var jimp = require('jimp')
 const arraySort = require('array-sort'),
-let done = {};
 client.on('ready', () => {
   console.log('---------------');
   console.log(' Gold Bot Is Online')
