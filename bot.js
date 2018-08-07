@@ -20,6 +20,15 @@ client.on('ready', () => {
   client.user.setStatus("idle")
     client.user.setActivity(" =help | =invite  ",{type: 'WATCHING'})
 });
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
 
 var prefix = "="
 
