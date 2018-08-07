@@ -17,7 +17,6 @@ const moment = require('moment');
 const ms = require("ms");
 var jimp = require('jimp')
 const arraySort = require('array-sort'),
-const Codes = require('codes-official');
 const math = require('math-expression-evaluator');
 const child_process = require("child_process");
 const stripIndents = require('common-tags').stripIndents;
