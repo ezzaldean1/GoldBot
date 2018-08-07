@@ -26,13 +26,6 @@ client.on('ready', () => {
 });
 
 
-  client.on('ready' , function (){
-var time = 7200000;
-client.setInterval(function() {
-    client.destroy();
-        child_process.fork(dirname + "/gold.js");
-  }, time);
-});
 
 var prefix = "="
 
