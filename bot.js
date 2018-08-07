@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 var fs = require("fs");
 const id = JSON.parse(fs.readFileSync("./id/mozo.json", "utf8"));
 let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
-
+table = require('table');
 const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
