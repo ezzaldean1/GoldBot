@@ -17,7 +17,6 @@ const moment = require('moment');
 const ms = require("ms");
 var jimp = require('jimp')
 const arraySort = require('array-sort'),
-const stripIndents = require('common-tags').stripIndents;
 const pretty = require('pretty-ms');
 const rn = require('random-number');
 const Music = require('discord.js-musicbot-addon');
