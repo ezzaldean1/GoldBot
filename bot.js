@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 var fs = require("fs");
 const arraySort = require('array-sort'),
-const yt = require("ytdl-core");
+const ytdl = require("ytdl-core");
 const id = JSON.parse(fs.readFileSync("./id/mozo.json", "utf8"));
 let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
 const { Client, Util } = require('discord.js');
