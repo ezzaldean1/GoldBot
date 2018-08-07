@@ -18,7 +18,6 @@ const moment = require('moment');
 const ms = require("ms");
 var jimp = require('jimp')
 const arraySort = require('array-sort'),
-table = require('table');
 const translate = require('google-translate-api');
 const Codes = require('codes-official');
 const math = require('math-expression-evaluator');
