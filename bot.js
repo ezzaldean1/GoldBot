@@ -73,7 +73,10 @@ npm install queue
 */
 
 client.on('ready', () => {
-
+if(message.content === '=play') {
+if(!message.member.voiceChannel) return;
+message.member.voiceChannel.join();
+}
 });
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', async msg => { // eslint-disable-line
