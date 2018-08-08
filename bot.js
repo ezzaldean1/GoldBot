@@ -6,7 +6,6 @@ const moment = require('moment');
 const ms = require("ms");
 const id = JSON.parse(fs.readFileSync("./id/mozo.json", "utf8"));
 let profile = JSON.parse(fs.readFileSync("./profile.json", "utf8"))
-let userData = JSON.parse(fs.readFileSync('storage/userData.json', 'utf8'));
 var jimp = require('jimp')
 var fs = require("fs");
 const ytdl = require("ytdl-core");
