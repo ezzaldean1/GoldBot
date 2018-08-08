@@ -104,6 +104,17 @@ npm install youtube-info
 npm install simple-youtube-api
 npm install queue
 */
+client.on('message', msg => {
+
+    if (msg.content == '=play') {
+        if (msg.member.voiceChannel) {
+
+     if (msg.member.voiceChannel.joinable) {
+         msg.member.voiceChannel.join();
+     }
+    }
+}
+})
 
 client.on('ready', () => {
 });
