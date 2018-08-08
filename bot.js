@@ -32,10 +32,6 @@ client.on('message', msg => {
 
 var prefix = "="
 
-if(message.content === '=play') {
-if(!message.member.voiceChannel) return;
-message.member.voiceChannel.join();
-}
 
 
 client.on('message', async message => {
