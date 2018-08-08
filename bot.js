@@ -3701,7 +3701,7 @@ client.on("guildCreate", guild => {
 
 
   client.on('guildMemberAdd', member => {
-      let channel = member.guild.channels.find('name', 'chat');
+      let channel = member.guild.channels.find('name', 'welcome');
       let xsattt = member.user.avatarURL
         if (!channel) return;
       let embed = new Discord.RichEmbed()
