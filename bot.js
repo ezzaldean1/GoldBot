@@ -360,10 +360,9 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 
 
 
-
-client.on("message",function(message) {
-    if(message.content.startsWith(prefix + "info")) {
-           let uptime = client.uptime;
+lient.on("message",function(message) {
+    if(message.content.startsWith(prefix + 'uptime')) {
+        let uptime = client.uptime;
 
     let days = 0;
     let hours = 0;
@@ -397,42 +396,21 @@ client.on("message",function(message) {
         if (uptime < 1000)  notCompleted = false;
 
     }
-let ms = 1000;
+    
 let v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("RED")
   v1.setDescription('***__ Collecting Data __***')
-  v1.setFooter("${client.user.username}") 
-let heroo = new Discord.RichEmbed()
-.setColor('RANDOM')
+  v1.setFooter("# | S Bot  |") 
+let norelden = new Discord.RichEmbed()
+.setColor('#9b59b6')
 .setTimestamp(new Date())
 .setThumbnail(client.user.avatarURL)
-.setAuthor(client.user.username,client.user.avatarURL)
-.addField("MyPrefix :",`**[ ${prefix} ]**`,true)
-.addField("Guilds :","**[ "+client.guilds.size+" ]**",true)
-.addField("Channels :","**[ "+client.channels.size+" ]**",true)
-.addField("Users :","**[ "+client.users.size+" ]**",true)
-.addField("MyName : ","**[ "+client.user.username+" ]**",true)
-.addField("MyID :","**[ "+client.user.id+" ]**",true)
-.addField("RamUsage :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
 .addField("UpTime :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("Gold-info")
-  message.channel.send({embed:v1}).then(m => m.edit({embed:heroo})),ms; 
-    }
-});
-function timeCon(time) {
-    let days = Math.floor(time % 31536000 / 86400)
-    let hours = Math.floor(time % 31536000 % 86400 / 3600)
-    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-    days = days > 9 ? days : '0' + days
-    hours = hours > 9 ? hours : '0' + hours
-    minutes = minutes > 9 ? minutes : '0' + minutes
-    seconds = seconds > 9 ? seconds : '0' + seconds
-    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+.setFooter("  S Bot |");
+  message.channel.send({embed:v1}).then(m => m.edit({embed:norelden}),5000);
 }
-
-
+});
 
 
 
