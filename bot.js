@@ -360,7 +360,7 @@ if(!args[0]) return message.reply('مرجو كتابة نص الدي تريد');
 
 
 
-lient.on("message",function(message) {
+client.on("message",function(message) {
     if(message.content.startsWith(prefix + 'uptime')) {
         let uptime = client.uptime;
 
