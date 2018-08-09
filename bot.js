@@ -3705,17 +3705,6 @@ client.on("guildCreate", guild => {
 
 
 
-  client.on('ready' , () => {
-var time = 7200000;
-setInterval(function() {
-    client.destroy();
-    client.login('NDcwNjEwMTg3MzcyMTk5OTQ3.DjYy9w.-_cS-dDNB-XTjoU5YWz0qsK9Ots')
-  }, time);
-})
-  
-
-
-
 
 
 client.on('message', message => {
