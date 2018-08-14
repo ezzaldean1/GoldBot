@@ -34,9 +34,31 @@ client.on('message', msg => {
 var prefix = "="
 
 
+  client.on('message', message => {
+if(message.content.startsWith("=slots")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1 === slots2 && slots2 === slots3) {
+    we = "Win!"
+  } else {
+    we = "Lose!"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
+  
 
-
-
+  client.on('message', async message => {
+if(message.author.bot) return;
+if (message.channel.guild) {
+if (message.content === '=help') {
+message.author.send(`=help`).catch(RebeL =>{console.log('`Error`: ' + RebeL);
+message.channel.send("**للأسف , لديك اعدادات خصوصية لاتسمح لي بأرسال رسائل خاصة لك **")
+});
+}}});
 
 client.on('message', message => {
    if (message.content.startsWith("=id")) {
