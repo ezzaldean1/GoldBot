@@ -55,7 +55,7 @@ if(message.content.startsWith("=slots")) {
 if(message.author.bot) return;
 if (message.channel.guild) {
 if (message.content === '=help') {
-message.author.send(`=help`).catch(RebeL =>{console.log('`Error`: ' + RebeL);
+message.author.send(`, شييك عخاصك يا حلو : )`).catch(RebeL =>{console.log('`Error`: ' + RebeL);
 message.channel.send("**للأسف , لديك اعدادات خصوصية لاتسمح لي بأرسال رسائل خاصة لك **")
 });
 }}});
@@ -1302,13 +1302,6 @@ client.on('message', msg => {
 });
 
 
-
-
-	client.on('message', msg => {
-  if (msg.content === prefix + 'help') {
-    msg.reply('**شييك عخاصك يا حلو : )**');
-  }
-});
 
 
 
