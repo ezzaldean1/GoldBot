@@ -14,7 +14,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 
-client.on('ready', () => {
+lient.on('ready', () => {
   console.log('---------------');
   console.log(' Gold Bot Is Online')
   console.log('---------------')
