@@ -107,7 +107,7 @@ var prefix = "="
 
 
 
-Rocket.on('message', message => {//id
+client.on('message', message => {//id
     if(message.content == ('=user')) {
 
              if (message.channel.type === 'dm') return message.reply('هذا الامر فقط للسيرفرات :x:');
