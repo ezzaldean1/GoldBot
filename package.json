@@ -7,7 +7,7 @@
     "start": "node bot.js"
   },
   "dependencies": {
-     "array-sort": "^1.0.0",
+ "array-sort": "^1.0.0",
     "ascii-data-table": "^2.1.1",
     "async": "~0.2.8",
     "canvas": "^1.6.11",
