@@ -108,13 +108,11 @@ var prefix = "="
 
 
 
-
 client.on('message', message => {//id
     if(message.content == ('=user')) {
 
              if (message.channel.type === 'dm') return message.reply('هذا الامر فقط للسيرفرات :x:');
-            var Canvas = module.require('canvas');
-            var jimp = module.require('jimp');
+          
 
      const w = ['./imgg/ID1.png','./imgg/ID2.png','./imgg/ID3.png','./imgg/ID4.png','./imgg/ID5.png'];
 
@@ -235,7 +233,6 @@ client.on('message', message => {//id
                              })
  }
  });
-
 
 
   client.on('message', message => {
