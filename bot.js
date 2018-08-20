@@ -300,9 +300,6 @@ client.on('message', msg => {
 }
 })
 
-client.on('ready', () => {
-});
-//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
@@ -335,7 +332,7 @@ client.on('message', async msg => { // eslint-disable-line
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
 			const playlist = await youtube.getPlaylist(url);
 			const videos = await playlist.getVideos();
-			//by ,$ ReBeL ء , ��#4777 'CODES SERVER'
+			//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 			for (const video of Object.values(videos)) {
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
@@ -353,7 +350,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 //by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-
+					.setFooter("CODES")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					// eslint-disable-next-line max-depth
@@ -494,8 +491,8 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 
-const adminprefix = "tvip";//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
-const devs = ['454400689133715477'];//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+const adminprefix = "$vip";//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
+const devs = ['274923685985386496'];//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
 client.on('message', message => {//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
   var argresult = message.content.split(` `).slice(1).join(' ');//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
     if (!devs.includes(message.author.id)) return;//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
@@ -519,8 +516,6 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 }
 
 });
-
-
 
 
 
