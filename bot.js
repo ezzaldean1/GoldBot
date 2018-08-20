@@ -13,14 +13,14 @@ const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
-
 client.on('ready', () => {
+ client.user.setGame(' =help | =invite','https://www.twitch.tv/peery13');
   console.log('---------------');
-  console.log(' Gold Bot Is Online')
+  console.log(' Platinum Bot Is Online')
   console.log('---------------')
-  client.user.setStatus("idle")
-    client.user.setActivity(" =help | =invite  ",{type: 'WATCHING'})
 });
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -953,7 +953,7 @@ if(hours3 > 12) {
              client.on('message', message => {
                 if(message.content === prefix + "support") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Support Gold Bot !**")
+                    embed.setTitle("**:arrow_right: Support Platinum Bot !**")
                     .setURL("https://discord.gg/zf6SECF");
                    message.channel.sendEmbed(embed);
                   }
@@ -962,7 +962,7 @@ if(hours3 > 12) {
              client.on('message', message => {
                 if(message.content === prefix + "invite") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite Gold Bot !**")
+                    embed.setTitle("**:arrow_right: Invite Platinum Bot !**")
                     .setURL("https://discordapp.com/oauth2/authorize?client_id=470610187372199947&permissions=8&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
@@ -1005,6 +1005,10 @@ client.on('message', message => {
   message.channel.sendMessage(Math.floor(Math.random() * 100));
     }
 });
+
+
+
+
 
 
 
@@ -2457,7 +2461,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('http://www.expertizacontabila.com/images/staffmap-icon.png')
          .setDescription(`
   
@@ -2504,7 +2508,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('https://s3.amazonaws.com/eclincher.wp.upload/wp-content/uploads/2015/08/25155834/people-icon.png')
          .setDescription(`
   
@@ -2545,7 +2549,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('https://cdn.discordapp.com/attachments/431063701072904202/437234646984425480/icon-managers-dark.png')
          .setDescription(`
        **✨Role Commands|اوامر القرعة✨**
@@ -2576,7 +2580,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('https://cdn.discordapp.com/attachments/470614739580616704/472150922319888385/music-512.png')
          .setDescription(`
        **✨Music Commands|اوامر الاغاني✨**
@@ -2617,7 +2621,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('https://cdn.discordapp.com/attachments/431063701072904202/437235056453615628/unnamed-4_1.png')
          .setDescription(`
        **✨Invites and Server Commands|اوامر الدعولت والسيرفر✨**
@@ -2657,7 +2661,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('http://reli.sh/wp-content/themes/relish/assets/img/services/icon-games.png')
          .setDescription(`
   
@@ -2711,7 +2715,7 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#ffff00")
-              .setFooter('Gold-Bot')
+              .setFooter('Platinum Bot')
          .setThumbnail('https://cdn0.iconfinder.com/data/icons/round-ui-icons/512/add_blue.png')
          .setDescription(`
   
