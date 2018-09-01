@@ -1748,7 +1748,31 @@ client.on('message', message => {
 
 
 
+client.on('message', function(message) {
 
+    if (message.channel.type === "dm") {
+
+        if (message.author.id === client.user.id) return;
+
+        var norElden = new Discord.RichEmbed()
+
+            .setColor('RANDOM')
+
+            .setTimestamp()
+
+            .setTitle('New Message On My DM !')
+
+            .setThumbnail(`${message.author.avatarURL}`)
+
+            .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
+
+            .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
+
+        client.channels.get("484662633660940288").send({ embed: norElden });
+
+    }
+
+});
 
 
 
@@ -1943,19 +1967,6 @@ if (message.content.startsWith((prefix) + 'report')) {
 
 
 
-client.on('message', function(message) {
-    if (message.channel.type === "dm") {
-        if (message.author.id === client.user.id) return;
-        var iiMo = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTimestamp()
-            .setTitle('``عندي رساله جديده بل خاص ! ``')
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-            .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
-             client.channels.get("484660959730728961").send({ embed: iiMo });
-    }
-});
 
 
 
