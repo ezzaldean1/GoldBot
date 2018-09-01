@@ -580,7 +580,7 @@ let v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("RED")
   v1.setDescription('***__ Collecting Data __***')
-  v1.setFooter("# | S Bot  |") 
+  v1.setFooter("# | Platinum Bot  |") 
 let norelden = new Discord.RichEmbed()
 .setColor('#9b59b6')
 .setTimestamp(new Date())
@@ -949,7 +949,7 @@ if(hours3 > 12) {
                 if(message.content === prefix + "support") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right: Support Platinum Bot !**")
-                    .setURL("https://discord.gg/zf6SECF");
+                    .setURL("https://discord.gg/v84KKjD");
                    message.channel.sendEmbed(embed);
                   }
 });
