@@ -314,4 +314,35 @@ client.on('message', async message => {
 });
 
 
+
+client.on('message',async message =>{
+
+    if(message.content.startsWith(prefix + "channels")) {
+
+        let i = 1;
+
+        let embed = new Discord.RichEmbed()
+
+        .setAuthor(message.author.username, message.author.avatarURL)
+
+        .setTitle(message.guild.name)
+
+        .setThumbnail(message.guild.iconURL)
+
+        .setDescription(message.guild.channels.map(c => `\`${i++}\` - **${c.name}**`))
+
+        .setFooter(message.guild.channels.size + ' Channels in the server!');
+
+        message.channel.send(embed).then(msg => {
+
+            msg.delete(25000);
+
+            message.delete(25000);
+
+        });
+
+    }
+
+});
+
 client.login(process.env.BOT_TOKEN); 
