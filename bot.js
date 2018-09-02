@@ -551,95 +551,204 @@ client.on("message", message => {
       }
       });
 
-Client.on("message", message => {
 
-		var args = message.content.split(' ').slice(1); 
+  client.on('message', message => {
+if(message.content.startsWith("=slots")) {
+  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+  let we;
+  if(slots1 === slots2 && slots2 === slots3) {
+    we = "Win!"
+  } else {
+    we = "Lose!"
+  }
+  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
 
-	var msg = message.content.toLowerCase();
 
-	if( !message.guild ) return;
 
-	if( !msg.startsWith( prefix + 'role' ) ) return;
 
-	if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
 
-	if( msg.toLowerCase().startsWith( prefix + 'roleremove' ) ){
+  client.on('message', async message => {
+if(message.author.bot) return;
+if (message.channel.guild) {
+if (message.content === =help') {
+message.author.send(`الرسآلهه`).catch(RebeL =>{console.log('`Error`: ' + RebeL);
+message.channel.send("**للأسف , لديك اعدادات خصوصية لاتسمح لي بأرسال رسائل خاصة لك **")
+});
+}}});
 
-		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
 
-		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );
 
-		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
+  client.on('guildCreate', guild => {
+client.channels.get("484662601339502592").send(`✅ **${client.user.tag} دخل سيرفر جديد
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+client.on('guildDelete', guild => {
+  client.channels.get("484662601339502592").send(`❎ **${client.user.tag} طلع من سيرفر
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
+    client.on('guildCreate', guild => {
+client.channels.get("485180734617681920").send(`✅ **${client.user.tag} دخل سيرفر جديد
+Server name: __${guild.name}__
+Server owner: __${guild.owner}__
+Server id: __${guild.id}__ 
+Server Count: __${guild.memberCount}__**`)
+});
 
-		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
 
-		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );if( message.mentions.members.first() ){
 
-			message.mentions.members.first().removeRole( role1 );
 
-			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
 
-		}
 
-		if( args[0].toLowerCase() == "all" ){
+   client.on('message', message => {
 
-			message.guild.members.forEach(m=>m.removeRole( role1 ))
+       if(message.content.startsWith(`${prefix}invite`)){
 
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
+           if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
 
-		} else if( args[0].toLowerCase() == "bots" ){
+           var embed = new Discord.RichEmbed()
 
-			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.removeRole(role1))
+           .setTitle("Invite Broadcast Bot")
 
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البوتات رتبة**');
+           .setURL("https://discordapp.com/oauth2/authorize?client_id=" + `${client.user.id}` + "&permissions=8&scope=bot")
 
-		} else if( args[0].toLowerCase() == "humans" ){
+           .setTimestamp()
 
-			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.removeRole(role1))
+           .setColor("RANDOM")
 
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البشريين رتبة**');
+           message.channel.send({embed})
 
-		} 	
+       }
 
-	} else {
+   });
 
-		if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطائها الرتبة**' );
 
-		if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );
+client.on('message', function(message) {
 
-		var role = msg.split(' ').slice(2).join(" ").toLowerCase(); 
+    if (message.channel.type === "dm") {
 
-		var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first(); 
+        if (message.author.id === client.user.id) return;
 
-		if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد اعطائها للشخص**' );if( message.mentions.members.first() ){
+        var norElden = new Discord.RichEmbed()
 
-			message.mentions.members.first().addRole( role1 );
+            .setColor('RANDOM')
 
-			return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم اعطاء **');
+            .setTimestamp()
 
-		}
+            .setTitle('New Message On My DM !')
 
-		if( args[0].toLowerCase() == "all" ){
+            .setThumbnail(`${message.author.avatarURL}`)
 
-			message.guild.members.forEach(m=>m.addRole( role1 ))
+            .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
 
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
+            .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
 
-		} else if( args[0].toLowerCase() == "bots" ){
+        client.channels.get("484662633660940288").send({ embed: norElden });
 
-			message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
-
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البوتات رتبة**');
-
-		} else if( args[0].toLowerCase() == "humans" ){
-
-			message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
-
-			return	message.reply('**:white_check_mark: [ '+role1.name+' ] تم إعطاء الشخص رتبة**');
-
-		} 
-
-	} 
+    }
 
 });
+
+
+
+  client.on('message', message => {
+
+    if (message.content === "=count") {
+
+    let embed = new Discord.RichEmbed()
+
+.addField('**Count**: ' , message.guild.memberCount)
+.setColor("#51cde6")
+.setDescription(`${message.guild.name}`)
+     message.channel.sendEmbed(embed);
+} 
+
+});
+
+
+  client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray.slice(1);
+
+if(cmd === `${prefix}serverinfo`);
+let sicon = message.guild.displyAvatarURL;
+let serverEmbed = new Discord.RichEmbed()
+.setDescription("``Server Information``")
+.addField("Server Name", message.guild.name)
+.addField("Created On", message.guild.createdAt)
+.addField("You Joined", message.member.joinedAt)
+.addField("Total Members", message.guild.memberCount)
+.addField("Server Owner", message.guild.owner.user.username)
+.addField("Rooms", message.guild.channels.size)
+.addField("Roles", message.guild.roles.size)
+.addField("Region", message.guild.region)
+.addField("Server ID", message.guild.id);
+
+return message.channel.send(serverEmbed);
+})
+
+
+
+  client.on('message', message => {
+    if (message.content.startsWith("رابط")) {
+
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 2,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+  message.channel.send("**تم ارسال الرابط برسالة خاصة**")
+
+message.author.send(`**مدة الرابط : يـوم
+عدد استخدامات الرابط : 2**`)
+
+
+    }
+});
+
+
+client.on('message', message => {
+     if(message.content.startsWith(prefix + "clear")) {
+         var args = message.content.split(" ").slice(1);
+ if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('You need MANAGE_MESSAGES permission noob');
+  if (!args[0]) return message.channel.send('You didn\'t provide any number!!!');
+
+  message.channel.bulkDelete(args[0]).then(() => {
+    const embed = new Discord.RichEmbed()
+      .setColor(0xF16104)
+      .setDescription(`Cleared ${args[0]} messages.`);
+    message.channel.send({ embed });
+
+    const actionlog = message.guild.channels.find('name', 'log');
+
+    if (!actionlog) return message.channel.send('Can\'t find action-log channel. Are you sure that this channel exists and I have permission to view it? **CANNOT POST LOG.**');
+    const embedlog = new Discord.RichEmbed()
+      .setDescription('~Purge~')
+      .setColor(0xF16104)
+      .addField('Purged By', `<@${message.author.id}> with ID ${message.author.id}`)
+      .addField('Purged in', message.channel)
+      .addField('Time', message.createdAt);
+    actionlog.send(embedlog);
+   
+  });
+};
+
+});
+
+
 client.login(process.env.BOT_TOKEN); 
